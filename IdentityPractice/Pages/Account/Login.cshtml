@@ -1,0 +1,40 @@
+﻿@page
+@model IdentityPractice.Pages.Account.LoginModel
+@{
+    ViewBag.Title = "Login";
+}
+
+<div class="container border" style="padding: 20px">
+    <form method="post">
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="Credential.UserName"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="Credential.UserName" type="text" class="form-control" />
+            </div>
+            <span class="text-danger" asp-validation-for="Credential.UserName"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="Credential.Password"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="Credential.Password" type="password" class="form-control" />
+            </div>
+            <span class="text-danger" asp-validation-for="Credential.Password"></span>
+        </div>
+        <div class="form-check row mb-2">
+            <div class="col-2">
+                <input type="checkbox" asp-for="Credential.RememberMe" class="form-check-input" />
+                <label asp-for="Credential.RememberMe" class="form-check-label"></label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-offset-2 col-5">
+                <input type="submit" class="btn btn-primary" value="Login" />
+            </div>
+        </div>
+    </form>
+</div>
